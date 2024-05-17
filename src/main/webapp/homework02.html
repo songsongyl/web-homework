@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card弹性列表布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 960px;
+        }
+        .row {
+            display: flex;
+        }
+        .card {
+            margin: 20px 50px 50px 50px;
+            padding: 0 20px 20px 20px;
+        }
+        .card-header img{
+            border-radius: 50%;
+            opacity: 0.5;
+            background-size: contain;
+        }
+        .card-content {
+            display: none;
+            text-align: justify;
+        }
+        .card-footer a{
+            background: rgba(255,0,0,0.5);
+        }
+        .card-header:hover + .card-content{
+            display: flex;
+
+        }
+
+        .card:hover {
+            box-shadow: 2px 2px transparent;
+        }
+        .card:hover .card-header img {
+            opacity: 1;
+        }
+        a:hover {
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://picsum.photos/200/200/?random=1" alt="">
+            </div>
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium debitis dolorum ducimus iste
+                    laudantium non optio reprehenderit tenetur ullam! Aliquid at, commodi deserunt dolorem eligendi
+                    fugiat natus nihil non nostrum quisquam, ratione.</p>
+            </div>
+            <div class="card-footer">
+                <a class="more" href="">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://picsum.photos/200/200/?random=2" alt="">
+            </div>
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium debitis dolorum ducimus iste
+                    laudantium non optio reprehenderit tenetur ullam! Aliquid at, commodi deserunt dolorem eligendi
+                    fugiat natus nihil non nostrum quisquam, ratione.</p>
+            </div>
+            <div class="card-footer">
+                <a class="more"  href="">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://picsum.photos/200/200/?random=3" alt="">
+            </div>
+            <div class="card-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium debitis dolorum ducimus iste
+                    laudantium non optio reprehenderit tenetur ullam! Aliquid at, commodi deserunt dolorem eligendi
+                    fugiat natus nihil non nostrum quisquam, ratione.</p>
+            </div>
+            <div class="card-footer">
+                <a class="more"  href="">Read More</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

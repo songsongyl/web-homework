@@ -2,7 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>form表单布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            border: 1px solid red;
+            max-width: 960px;
+            margin: 15px auto;
+        }
+        .not-radio {
+            width: 100%;
+            border-radius: 5px;
+            padding: 5px 15px 0 8px;
+            margin-bottom: 10px;
+
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 10px;
+            /*text-align: center;*/
+        }
+        .form-group-label {
+            text-align: right;
+            width: 20%;
+            padding-right: 10px;
+        }
+        .form-group-input {
+            width: 80%;
+            margin-bottom: 10px;
+            margin-right: 20px;
+        }
+
+    </style>
 </head>
 <body>
 <div class="container">
@@ -10,13 +48,13 @@
         <div class="form-group">
             <label class="form-group-label">用户名</label>
             <div class="form-group-input">
-                <input type="text">
+                <input type="text" class="not-radio">
             </div>
         </div>
         <div class="form-group">
             <label class="form-group-label">密码</label>
             <div class="form-group-input">
-                <input type="password">
+                <input type="password" class="not-radio">
             </div>
         </div>
         <div class="form-group">
