@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        .container{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .row {
+            display: flex;
+        }
+        .left ul {
+            list-style: none;
+
+        }
+        .left {
+            position: absolute;
+            min-width: 80px;
+            transition: all 0.5s;
+        }
+        a {
+            display: block;
+            background-color: orange;
+            color: white;
+            text-decoration: none;
+            width: 40px;
+        }
+        .left span {
+            display: none;
+            font-size: 1.1em;
+            padding-bottom: 4px;
+        }
+
+        a i + span {
+            display: inline-block;
+            /* 必须父元素弹性align-self: center;*/
+            vertical-align: middle;
+        }
+        a:hover{
+            background-color: blue;
+            width: 180px;
+
+        }
+
+        a:hover span {
+            display: inline-block;
+            flex-wrap: nowrap;
+
+        }
+        .right {
+            margin-left: 90px;
+        }
+
+        a:hover i {
+            color: red;
+        }
+
+
+        @media (max-width :600px) {
+            .left {
+                min-width: 60px;
+                span {
+                    display: none;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="left">
+            <ul>
+                <li>
+                    <a href="">
+                        <i class="material-icons">assignment_ind</i>
+                        <span>assignment_ind</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="material-icons">delete</i>
+                        <span>delete</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="material-icons">check_circle</i>
+                        <span>check_circle</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="material-icons">favorite</i>
+                        <span>favorite</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="material-icons">account_circle</i>
+                        <span>account_circle</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at eveniet ipsa laboriosam nobis nulla qui? At autem beatae cum distinctio exercitationem, facere iure iusto nemo nihil officia perspiciatis placeat quas repudiandae sapiente sequi sint voluptate? Aperiam corporis, enim!</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

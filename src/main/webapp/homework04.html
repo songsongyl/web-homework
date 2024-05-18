@@ -3,18 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <title>Navigation Drawer响应式布局</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <style>
+ .container{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+ }
+ .row {
+     display: flex;
+ }
+ .left ul {
+     list-style: none;
+ }
+ .left {
+     min-width: 180px;
+ }
+a {
+    display: block;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
 
+}
+.left span {
+
+    font-size: 0.9em;
+}
+
+a i + span {
+    vertical-align: center;
+}
+a:hover {
+    background-color: blue;
+}
+.right {
+   margin-left: 20px;
+}
+
+a:hover i {
+    color: red;
+}
+
+@media (max-width :600px) {
+    .left {
+        min-width: 60px;
+        span {
+            display: none;
+        }
+    }
+}
 </style>
 <body>
-<div class="nav">
+<div class="container">
     <div class="row">
         <div class="left">
-            
+            <ul>
+                <li>
+                     <a href="">
+                     <i class="material-icons">assignment_ind</i>
+                     <span>assignment_ind</span>
+                     </a>
+                </li>
+                <li>
+                    <a href="">
+                    <i class="material-icons">delete</i>
+                    <span>delete</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                    <i class="material-icons">check_circle</i>
+                    <span>check_circle</span>
+                  </a>
+                </li>
+                 <li>
+                <a href="">
+                <i class="material-icons">favorite</i>
+                <span>favorite</span>
+                </a>
+                 </li>
+                <li>
+                <a href="">
+                <i class="material-icons">account_circle</i>
+                <span>account_circle</span>
+                 </a>
+                </li>
+            </ul>
         </div>
         <div class="right">
-
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam at eveniet ipsa laboriosam nobis nulla qui? At autem beatae cum distinctio exercitationem, facere iure iusto nemo nihil officia perspiciatis placeat quas repudiandae sapiente sequi sint voluptate? Aperiam corporis, enim!</p>
         </div>
     </div>
 </div>
