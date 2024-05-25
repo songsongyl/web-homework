@@ -15,55 +15,70 @@
             margin: 15px auto;
         }
         .not-radio {
-            width: 100%;
+           width: 400px;
             border-radius: 5px;
-            padding: 5px 15px 0 8px;
-            padding-bottom: 10px;
-
+            padding: 5px 15px 0 10px;
+            transition: .3s;
         }
 
         .form-group {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
             margin-top: 10px;
+
             /*text-align: center;*/
         }
         .form-group-label {
-            text-align: right;
-            width: 20%;
-            padding-right: 10px;
+
         }
         .form-group-input {
-            width: 80%;
-            padding-bottom: 10px;
+           position: relative;
+            padding-bottom: 20px;
             padding-right: 20px;
+            cursor: text;
+            margin-top: 20px;
+
         }
-        .not-radio:focus {
-            transform: translate(-2px,-5px);
+        .span-box {
+            width: 100%;
+            padding: 0 10px;
+            position: absolute;
+            display: flex;
         }
+        .span1 {
+            transition: .3s cubic-bezier(0.5,-0.5,0.5,1.5);
+        }
+        .span1:nth-of-type(2) {
+            transition-delay: 100ms;
+        }
+        .span1:nth-of-type(3) {
+            transition-delay: 200ms;
+        }
+        .not-radio:focus + .span-box .span1 , .not-radio:valid + .span-box .span1 {
+            transform: translateY(-50px);
+        }
+        .not-radio:focus , .not-radio:valid {
+            border-bottom: 2px solid blue;
+        }
+
     </style>
 </head>
 <body>
 <div class="container">
     <form>
         <div class="form-group">
-            <label class="form-group-label">用户名</label>
             <div class="form-group-input">
-                <input type="text" class="not-radio">
+                <input type="text" class="not-radio" required>
+                <span class="span-box">
+                    <span class="span1">用</span><span class="span1">户</span><span class="span1">名</span>
+                </span>
             </div>
         </div>
         <div class="form-group">
-            <label class="form-group-label">密码</label>
             <div class="form-group-input">
-                <input type="password" class="not-radio">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="form-group-label">性别</label>
-            <div class="form-group-input">
-                <label><input type="radio" name="sex">男</label>
-                <label><input type="radio" name="sex">女</label>
+                <input type="password" class="not-radio" required>
+                <span class="span-box">
+                    <span class="span1">密</span><span class="span1">码</span>
+                </span>
             </div>
         </div>
     </form>
