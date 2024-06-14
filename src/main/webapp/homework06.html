@@ -80,9 +80,11 @@ $(function (){
         modal.fadeIn(500)
         modal.children(".modal-dialog").animate({top: "30px"})
     })
-        modal.children(".modal-dialog").click(()=>false)
-        $("[data-modal-dismiss]").click( ()=> {
-            modal.fadeOut(500)
+    //阻止向上继续冒泡
+    //     modal.children(".modal-dialog").click(()=> false)
+    $(".modal-dialog").click(()=> false)
+        $(".modal,[data-modal-dismiss]").click( ()=> {
+            modal.fadeOut()
             modal.children(".modal-dialog").animate({top: "0px"})
         } )
 })
