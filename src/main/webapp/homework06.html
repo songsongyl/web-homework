@@ -3,14 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <title>Modal模态框</title>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 <style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 960px;
+    /*margin: auto;*/
+}
+.modal-dialog{
+    margin: auto;
+    background-color: white;
+    position: relative;
+    width: 400px;
+}
+.modal-dialog-content{
+    text-align: left;
+
+}
+.modal-dialog-footer{
+    text-align: right;
+    padding: 5px;
+}
+button{
+    background-color: darkcyan;
+    border-radius: 3px;
+}
+.modal{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+p{
+    padding: 10px;
+    margin: 5px;
+}
 
 </style>
 <body>
-<script>
+<div class="container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, aperiam asperiores, et ex excepturi expedita explicabo iusto minima mollitia nobis numquam odio pariatur quae quaerat repellat reprehenderit rerum sed tempora voluptatem. Ab ad asperiores atque consequatur corporis cumque ducimus id in ipsa laudantium necessitatibus, nobis, porro possimus rerum totam.
+    </p><br>
+    <button data-modal-target="1">点击激活模态框</button>
+    <div class="modal" id="1">
+        <div class="modal-dialog"  >
+            <div class="modal-dialog-header">
+                <h1>标题</h1>
+            </div>
+            <div class="modal-dialog-content">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda at culpa debitis delectus hic, ipsam minus molestiae quam quidem, quis quo veritatis.
+                <br>Animi consequatur esse mollitia temporibus velit. Nesciunt, quia, tempora.
+            </div>
+            <div class="modal-dialog-footer">
+                <button data-modal-dismiss>close</button>
+                <button>save</button>
+            </div>
+        </div>
+    </div>
 
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(function (){
+    let modal
+    $("[data-modal-target]").click(function () {
+        let id = $(this).data("modal-target")
+         modal = $(`#${id}`)
+        modal.fadeIn(500)
+        modal.children(".modal-dialog").animate({top: "30px"})
+    })
+        modal.children(".modal-dialog").click(()=>false)
+        $("[data-modal-dismiss]").click( ()=> {
+            modal.fadeOut(500)
+            modal.children(".modal-dialog").animate({top: "0px"})
+        } )
+})
 </script>
 </body>
 </html>
