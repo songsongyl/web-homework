@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Floating Button布局</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .fab {
+            position: absolute;
+            /*background-color: #a9c1ee;*/
+            top: 0;
+            right: 0;
+            /*height: 100px;*/
+        }
+        .fab-btn{
+            font-size: 4em;
+            color: cadetblue;
+            margin: 15px;
+            height: 50px;
+        }
+        .fab-menu i{
+            font-size: 3em;
+            color:orange;
+        }
+        ul{
+            position: absolute;
+            top: 80px;
+            right: 25px;
+            display: none;
+            list-style: none;
+        }
+        .fab:hover{
+            cursor: pointer;
+        }
+        /*.fab:hover ul{*/
+        /*    display: inline-block;*/
+
+        /*    !*height: 400px;*!*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<div class="fab">
+      <i class="material-icons fab-btn" data-icon="remove_circle">
+          account_circle
+      </i>
+    <ul class="fab-menu" >
+        <li>
+            <a >
+                <i class="material-icons">access_time_filled
+                </i>
+            </a>
+        </li>
+        <li>
+            <a >
+                <i class="material-icons">adb</i>
+            </a>
+            <br>
+            <a >
+                <i class="material-icons" style="color: red">delete_forever
+                </i>
+            </a>
+        </li>
+    </ul>
+</div>
+<script>
+   $(function (){
+       let before,after
+       $(".fab").hover(
+            function(){
+               $(this).children(".fab-menu").fadeIn(1000)
+                before =  $(this).children(".fab-btn").text()
+                 after = $(this).children(".fab-btn").data("icon")
+                $(this).children(".fab-btn").text(after)
+                // $(this).text($(this).find(".fab-menu").eq(1).children("i").text())
+                // $(this).children(".fab-btn").animate({
+                //     degree:180
+                // }, {
+                //     duration: 300,
+                //     step: function (now) {
+                //         $(this).css({
+                //             transform: 'rotate(' + now + 'deg)'
+                //         })
+                //     }
+                // })
+                $(this).children(".fab-btn").animate({rotate:"180deg"})
+            },
+           function(){
+               $(this).children(".fab-menu").fadeOut(1000)
+               $(this).children(".fab-btn").text(before)
+               $(this).children(".fab-btn").animate({rotate:"0deg"})
+           })
+/*
+* 还可通过transform实现
+* */
+
+   })
+</script>
+</body>
+</html>
