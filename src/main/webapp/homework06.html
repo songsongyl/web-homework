@@ -81,7 +81,9 @@ $(function (){
         modal.children(".modal-dialog").animate({top: "30px"})
     })
     //阻止向上继续冒泡
-    //     modal.children(".modal-dialog").click(()=> false)
+    //    modal.children(".modal-dialog").click(()=> false)
+    //这个不行 为什么？
+    //函数内改变全局变量的值只在函数内起作用
     $(".modal-dialog").click(()=> false)
         $(".modal,[data-modal-dismiss]").click( ()=> {
             modal.fadeOut()
